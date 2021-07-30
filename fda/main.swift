@@ -6,6 +6,25 @@
 //
 
 import Foundation
+import SQLite3
+
+let service_Column = TextTableColumn(header: "service")
+let client_Column = TextTableColumn(header: "client")
+let client_type_Column = TextTableColumn(header: "client_type")
+let auth_value_Column = TextTableColumn(header: "auth_value")
+let auth_reason_Column = TextTableColumn(header: "auth_reason")
+let auth_version_Column = TextTableColumn(header: "auth_version")
+let csreq_Column = TextTableColumn(header: "csreq")
+let policy_id_Column = TextTableColumn(header: "policy_id")
+let indirect_object_identifier_type_Column = TextTableColumn(header: "indirect_object_identifier_type")
+let indirect_object_identifier_Column = TextTableColumn(header: "indirect_object_identifier")
+let indirect_object_code_identity_Column = TextTableColumn(header: "indirect_object_code_identity")
+let flags_Column = TextTableColumn(header: "flags")
+let last_modified_Column = TextTableColumn(header: "last_modified")
+
+func toBase64(data: Data) -> String {
+    return data.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))
+}
 
 func Help()
 {
